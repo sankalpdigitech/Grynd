@@ -16,7 +16,7 @@ export function HomePage({ user }: { user: User | null }) {
         <div className="absolute bottom-0 right-4 w-16 h-16 bg-yellow-400 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-12 hidden md:block" />
         
         <h1 className="text-5xl sm:text-6xl md:text-8xl font-display font-bold tracking-tighter text-black uppercase mb-6 leading-none">
-          Delhi's <br/><span className="text-orange-400 bg-black px-2 py-1 sm:px-4 sm:py-2 inline-block -rotate-2 my-2 shadow-[4px_4px_0px_0px_rgba(249,115,22,1)] sm:shadow-[6px_6px_0px_0px_rgba(249,115,22,1)] border-3 sm:border-4 border-black">Student</span><br/> Freelance Hub
+          Your <span className="text-orange-400 bg-black px-2 py-1 sm:px-4 sm:py-2 inline-block -rotate-2 my-2 shadow-[4px_4px_0px_0px_rgba(249,115,22,1)] sm:shadow-[6px_6px_0px_0px_rgba(249,115,22,1)] border-3 sm:border-4 border-black">Skill.</span><br/> Your <span className="text-[#5C46E8]">G</span><span className="text-[#19B8AF]">r</span><span className="text-[#F8B11A]">y</span><span className="text-[#5C46E8]">n</span><span className="text-[#19B8AF]">d</span>
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-black font-bold mb-10 max-w-2xl mx-auto border-y-4 border-black py-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           Need a fest poster? A reel edited? A tutor? Find verified student talent.
@@ -43,7 +43,7 @@ export function HomePage({ user }: { user: User | null }) {
             <GraduationCap className="w-8 h-8 text-black stroke-[3]" />
           </div>
           <h3 className="text-2xl font-display uppercase tracking-tight mb-4">Student Only</h3>
-          <p className="text-black font-bold text-lg">Built exclusively for Delhi students. No professional agencies.</p>
+          <p className="text-black font-bold text-lg">Built exclusively for students. No professional agencies.</p>
         </div>
         
         <div className={`${brutalistCard} p-8 text-center bg-blue-400`}>
