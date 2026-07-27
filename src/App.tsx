@@ -18,6 +18,7 @@ import { ProfileSetup } from './pages/ProfileSetup';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from './Grynd.png';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -35,7 +36,7 @@ function Navigation({ user, onLogout }: { user: User | null, onLogout: () => voi
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex-shrink-0 flex items-center gap-2 group">
           <div className="w-10 h-10 bg-white border-3 border-black rounded-lg flex items-center justify-center overflow-hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:translate-y-[1px] group-hover:translate-x-[1px] group-hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all">
-            <img src="/Grynd.png" alt="Grynd Logo" className="w-full h-full object-cover" />
+            <img src={logo} alt="Grynd Logo" className="w-full h-full object-cover" />
           </div>
           <span className="font-display text-2xl tracking-tighter text-black uppercase mt-1">
             Grynd
