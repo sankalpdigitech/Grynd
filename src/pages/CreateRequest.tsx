@@ -35,11 +35,11 @@ export function CreateRequest({ user }: { user: User | null }) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto py-12">
-      <div className={`${brutalistCard} p-8 bg-yellow-400`}>
-        <h1 className="text-4xl font-display font-bold text-black uppercase mb-8 border-b-4 border-black pb-4 bg-white inline-block px-4 -rotate-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">Post a Gig</h1>
+    <div className="max-w-2xl mx-auto py-6 sm:py-12 px-4 sm:px-0">
+      <div className={`${brutalistCard} p-4 sm:p-8 bg-yellow-400`}>
+        <h1 className="text-2xl sm:text-4xl font-display font-bold text-black uppercase mb-6 sm:mb-8 border-b-4 border-black pb-4 bg-white inline-block px-4 -rotate-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg">Post a Gig</h1>
         
-        <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <form onSubmit={handleSubmit} className="space-y-6 bg-white p-4 sm:p-6 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl">
           <div>
             <label className="block text-sm font-bold text-black uppercase mb-2">
               Title
@@ -131,18 +131,18 @@ export function CreateRequest({ user }: { user: User | null }) {
             />
           </div>
 
-          <div className="pt-8 flex justify-end gap-4 border-t-4 border-black mt-8">
+          <div className="pt-8 flex flex-col sm:flex-row justify-end gap-4 border-t-4 border-black mt-8">
             <button
               type="button"
               onClick={() => navigate(-1)}
-              className={`${brutalistButtonLight} px-6 py-3 bg-gray-200`}
+              className={`${brutalistButtonLight} px-6 py-3 bg-gray-200 w-full sm:w-auto text-center`}
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading}
-              className={`${brutalistButton} px-8 py-3 bg-orange-400 text-black`}
+              className={`${brutalistButton} px-8 py-3 bg-orange-400 text-black w-full sm:w-auto text-center`}
             >
               {loading ? 'POSTING...' : 'POST GIG'}
             </button>

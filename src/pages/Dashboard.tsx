@@ -43,14 +43,14 @@ export function Dashboard({ user }: { user: User | null }) {
   return (
     <div className="space-y-12">
       <div className="border-b-4 border-black pb-6">
-        <h1 className="text-4xl md:text-5xl font-display font-bold text-black uppercase mb-4">Welcome, {user.name}</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-black uppercase mb-4">Welcome, {user.name}</h1>
         <div className="flex flex-wrap items-center gap-4">
           <span className="font-bold uppercase text-sm">Status:</span>
-          <span className="bg-green-400 border-2 border-black px-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-bold text-black uppercase -rotate-2">
+          <span className="bg-green-400 border-2 border-black px-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-bold text-black uppercase -rotate-2 rounded-md">
             {user.status}
           </span>
           {isFreelancer && (
-            <Link to="/profile-setup" className="ml-4 font-bold uppercase text-black hover:bg-yellow-300 border-2 border-transparent hover:border-black transition-colors px-2 py-1">
+            <Link to="/profile-setup" className="ml-0 sm:ml-4 font-bold uppercase text-black hover:bg-yellow-300 border-2 border-transparent hover:border-black transition-colors px-2 py-1 rounded-md">
               Edit Freelancer Profile ➔
             </Link>
           )}
@@ -69,16 +69,16 @@ export function Dashboard({ user }: { user: User | null }) {
             </div>
             
             {myRequests.length === 0 ? (
-              <div className="bg-white border-3 border-black p-8 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-bold uppercase">
+              <div className="bg-white border-3 border-black p-8 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-bold uppercase rounded-lg">
                 You haven't posted any gigs yet.
               </div>
             ) : (
               <div className="space-y-6">
                 {myRequests.map(req => (
-                  <Link key={req.id} to={`/requests/${req.id}`} className="block bg-white border-3 border-black p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all">
+                  <Link key={req.id} to={`/requests/${req.id}`} className="block bg-white border-3 border-black p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all rounded-lg">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-bold text-black uppercase line-clamp-1">{req.title}</h3>
-                      <span className="bg-yellow-300 border-2 border-black px-2 font-bold text-black text-xs uppercase -rotate-3">
+                      <span className="bg-yellow-300 border-2 border-black px-2 font-bold text-black text-xs uppercase -rotate-3 rounded-md">
                         {req.status}
                       </span>
                     </div>
@@ -96,22 +96,22 @@ export function Dashboard({ user }: { user: User | null }) {
           <div className={`${brutalistCard} p-6 bg-[#fce7f3]`}>
             <div className="flex justify-between items-center mb-6 border-b-3 border-black pb-4">
               <h2 className="text-2xl font-display font-bold text-black uppercase">My Pitches</h2>
-              <Link to="/requests" className="text-sm font-bold uppercase text-black hover:bg-white border-2 border-transparent hover:border-black px-2 py-1 transition-colors">
+              <Link to="/requests" className="text-sm font-bold uppercase text-black hover:bg-white border-2 border-transparent hover:border-black px-2 py-1 transition-colors rounded-md">
                 Find More Gigs
               </Link>
             </div>
             
             {myPitches.length === 0 ? (
-              <div className="bg-white border-3 border-black p-8 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-bold uppercase">
+              <div className="bg-white border-3 border-black p-8 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-bold uppercase rounded-lg">
                 You haven't pitched for any gigs yet.
               </div>
             ) : (
               <div className="space-y-6">
                 {myPitches.map(pitch => (
-                  <Link key={pitch.id} to={`/requests/${pitch.requestId}`} className="block bg-white border-3 border-black p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all">
+                  <Link key={pitch.id} to={`/requests/${pitch.requestId}`} className="block bg-white border-3 border-black p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all rounded-lg">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-bold text-black uppercase line-clamp-1 text-sm flex-1 mr-2">FOR: {pitch.request?.title}</h3>
-                      <span className="font-display font-bold text-black border-2 border-black px-1 bg-green-400 text-sm whitespace-nowrap">
+                      <span className="font-display font-bold text-black border-2 border-black px-1 bg-green-400 text-sm whitespace-nowrap rounded-md">
                         {pitch.proposedPrice}
                       </span>
                     </div>
