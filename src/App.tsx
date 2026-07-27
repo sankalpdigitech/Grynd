@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { api, setCurrentUser, getCurrentUser } from './lib/api';
 import { User } from './types';
 import { Search, Briefcase, PlusCircle, User as UserIcon, LayoutDashboard, CheckCircle2, ChevronRight, LogOut, CheckSquare } from 'lucide-react';
@@ -133,7 +133,7 @@ export default function App() {
   const handleLogout = () => {
     setCurrentUser(null);
     setUser(null);
-    window.location.href = '/';
+    window.location.hash = '#/';
   };
 
   if (loading) {
@@ -145,7 +145,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
         <Navigation user={user} onLogout={handleLogout} />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -160,6 +160,6 @@ export default function App() {
           </Routes>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
