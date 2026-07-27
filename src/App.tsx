@@ -29,22 +29,22 @@ function Navigation({ user, onLogout }: { user: User | null, onLogout: () => voi
   const canPostGig = user && (user.role === 'CLIENT' || user.role === 'BOTH');
   
   return (
-    <nav className="sticky top-0 z-50 bg-[#f4f4f0] border-b-4 border-black px-4 py-3">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="flex items-center gap-6">
+    <nav className="sticky top-0 z-50 bg-[#f4f4f0] border-b-4 border-black px-2 sm:px-4 py-3">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full md:w-auto">
           <Link to="/" className="flex-shrink-0 flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-yellow-400 border-3 border-black flex items-center justify-center text-black font-display text-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:translate-y-[1px] group-hover:translate-x-[1px] group-hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-yellow-400 border-3 border-black flex items-center justify-center text-black font-display text-lg sm:text-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:translate-y-[1px] group-hover:translate-x-[1px] group-hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all">
               DS
             </div>
-            <span className="font-display text-2xl tracking-tighter text-black uppercase mt-1">
+            <span className="font-display text-xl sm:text-2xl tracking-tighter text-black uppercase mt-1">
               DelhiSkill
             </span>
           </Link>
           
-          <div className="hidden sm:flex sm:gap-4 ml-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:ml-8">
             {showFindWork && (
               <Link to="/requests" className={cn(
-                "px-4 py-2 font-bold uppercase tracking-wider text-sm border-2 border-black transition-all",
+                "px-3 py-1.5 sm:px-4 sm:py-2 font-bold uppercase tracking-wider text-xs sm:text-sm border-2 border-black transition-all",
                 location.pathname === '/requests' 
                   ? "bg-black text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" 
                   : "bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-yellow-200"
@@ -54,7 +54,7 @@ function Navigation({ user, onLogout }: { user: User | null, onLogout: () => voi
             )}
             {showHireTalent && (
               <Link to="/freelancers" className={cn(
-                "px-4 py-2 font-bold uppercase tracking-wider text-sm border-2 border-black transition-all",
+                "px-3 py-1.5 sm:px-4 sm:py-2 font-bold uppercase tracking-wider text-xs sm:text-sm border-2 border-black transition-all",
                 location.pathname === '/freelancers'
                   ? "bg-black text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                   : "bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-yellow-200"
@@ -65,9 +65,9 @@ function Navigation({ user, onLogout }: { user: User | null, onLogout: () => voi
           </div>
         </div>
         
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:space-x-4">
           {!user ? (
-            <div className="flex gap-2">
+            <div className="flex flex-wrap justify-center gap-2">
               <button 
                 onClick={() => {
                   setCurrentUser('u1');
@@ -88,19 +88,19 @@ function Navigation({ user, onLogout }: { user: User | null, onLogout: () => voi
               </button>
             </div>
           ) : (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {canPostGig && (
-                <Link to="/create-request" className="hidden sm:inline-flex items-center justify-center bg-orange-400 border-3 border-black px-4 py-2 text-sm font-bold text-black uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
-                  <PlusCircle className="w-4 h-4 mr-2 stroke-[3]" />
-                  Post a Gig
+                <Link to="/create-request" className="inline-flex items-center justify-center bg-orange-400 border-3 border-black px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold text-black uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+                  <PlusCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 stroke-[3]" />
+                  Post <span className="hidden sm:inline ml-1">a Gig</span>
                 </Link>
               )}
-              <Link to="/dashboard" className="w-10 h-10 bg-white border-3 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+              <Link to="/dashboard" className="w-8 h-8 sm:w-10 sm:h-10 bg-white border-3 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
                 <span className="sr-only">Dashboard</span>
-                <UserIcon className="w-5 h-5 text-black stroke-[3]" />
+                <UserIcon className="w-4 h-4 sm:w-5 sm:h-5 text-black stroke-[3]" />
               </Link>
-              <button onClick={onLogout} className="w-10 h-10 bg-red-400 border-3 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all" title="Logout">
-                <LogOut className="w-5 h-5 text-black stroke-[3]" />
+              <button onClick={onLogout} className="w-8 h-8 sm:w-10 sm:h-10 bg-red-400 border-3 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all" title="Logout">
+                <LogOut className="w-4 h-4 sm:w-5 sm:h-5 text-black stroke-[3]" />
               </button>
             </div>
           )}

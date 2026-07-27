@@ -15,21 +15,21 @@ export function HomePage({ user }: { user: User | null }) {
         <div className="absolute top-0 left-4 w-12 h-12 bg-blue-400 border-3 border-black rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-12 hidden md:block" />
         <div className="absolute bottom-0 right-4 w-16 h-16 bg-yellow-400 border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-12 hidden md:block" />
         
-        <h1 className="text-6xl md:text-8xl font-display font-bold tracking-tighter text-black uppercase mb-6 leading-none">
-          Delhi's <br/><span className="text-orange-400 bg-black px-4 py-2 inline-block -rotate-2 my-2 shadow-[6px_6px_0px_0px_rgba(249,115,22,1)] border-4 border-black">Student</span><br/> Freelance Hub
+        <h1 className="text-5xl sm:text-6xl md:text-8xl font-display font-bold tracking-tighter text-black uppercase mb-6 leading-none">
+          Delhi's <br/><span className="text-orange-400 bg-black px-2 py-1 sm:px-4 sm:py-2 inline-block -rotate-2 my-2 shadow-[4px_4px_0px_0px_rgba(249,115,22,1)] sm:shadow-[6px_6px_0px_0px_rgba(249,115,22,1)] border-3 sm:border-4 border-black">Student</span><br/> Freelance Hub
         </h1>
-        <p className="text-xl md:text-2xl text-black font-bold mb-10 max-w-2xl mx-auto border-y-4 border-black py-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <p className="text-lg sm:text-xl md:text-2xl text-black font-bold mb-10 max-w-2xl mx-auto border-y-4 border-black py-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           Need a fest poster? A reel edited? A tutor? Find verified student talent.
         </p>
         
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
           {showFindWork && (
-            <Link to="/requests" className={`${brutalistButton} px-8 py-4 text-lg inline-flex items-center justify-center`}>
-              Find Work <ArrowRight className="ml-2 w-6 h-6 stroke-[3]" />
+            <Link to="/requests" className={`${brutalistButton} px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg inline-flex items-center justify-center`}>
+              Find Work <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
             </Link>
           )}
           {showHireTalent && (
-            <Link to="/freelancers" className={`${brutalistButtonLight} px-8 py-4 text-lg inline-flex items-center justify-center`}>
+            <Link to="/freelancers" className={`${brutalistButtonLight} px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg inline-flex items-center justify-center`}>
               Hire a Student
             </Link>
           )}
